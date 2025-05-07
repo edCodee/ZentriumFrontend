@@ -1,12 +1,45 @@
-# React + Vite
+# ZentriumFrontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend de la aplicación Zentrium, desarrollado con **React + Vite**.
 
-Currently, two official plugins are available:
+Este proyecto es parte de una solución completa que incluye un backend en ASP.NET Core y una base de datos en SQL Server. Esta interfaz permite la gestión de pacientes, médicos y otros recursos del sistema Zentrium Medical.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologías Utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [JavaScript (ES6+)](https://developer.mozilla.org/es/docs/Web/JavaScript)
+- [CSS Modules / Tailwind (si aplica)]
+- [Axios](https://axios-http.com/) para llamadas HTTP
+- [React Router](https://reactrouter.com/) para navegación
+- Integración con API RESTful (ASP.NET Core)
+
+---
+
+## 📦 Instalación
+
+Clona el repositorio y ejecuta:
+
+```bash
+npm install
+npm run dev
+
+
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── App.jsx
+│   └── main.jsx
+├── .env
+├── package.json
+└── vite.config.js
+
+MIT © 2025 - [Joel-edCode]
+
+🚀 Autor
+Joel / edCodee
+GitHub: edCodee
