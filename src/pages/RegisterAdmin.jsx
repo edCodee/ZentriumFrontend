@@ -109,7 +109,7 @@ export default function NewPatient() {
     return (
         <>
             <form onSubmit={handleSubmit} className="max-w-4xl mx-auto mt-10 p-10 bg-[#2d3748] rounded-2xl shadow-xl space-y-10 text-white">
-                <h2 className="text-3xl font-bold text-center text-teal-400">📝 Registro de Paciente</h2>
+                <h2 className="text-3xl font-bold text-center text-teal-400">Registro de Paciente</h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {[ 
@@ -196,7 +196,7 @@ export default function NewPatient() {
             {showSuccessModal && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50">
                     <div className="bg-white text-black p-8 rounded-xl shadow-xl w-full max-w-sm text-center">
-                        <h2 className="text-2xl font-bold text-green-600 mb-4">✅ Registro exitoso</h2>
+                        <h2 className="text-2xl font-bold text-green-600 mb-4">Registro exitoso</h2>
                         <p className="mb-6">Paciente registrado correctamente.</p>
                         <button
                             onClick={handleCloseModal}
@@ -212,7 +212,7 @@ export default function NewPatient() {
             {showErrorModal && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50">
                     <div className="bg-white text-black p-8 rounded-xl shadow-xl w-full max-w-sm text-center">
-                        <h2 className="text-2xl font-bold text-red-600 mb-4">❌ Error en el registro</h2>
+                        <h2 className="text-2xl font-bold text-red-600 mb-4">Error en el registro</h2>
                         <p className="mb-6">Verifica que todos los campos sean válidos.</p>
                         <button
                             onClick={handleCloseModalError}

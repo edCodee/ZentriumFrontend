@@ -1,5 +1,6 @@
 import React from 'react';
 import { Calendar, FileText, Stethoscope, UserCircle, LogOut } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 export default function PatientDashboard() {
     return (
@@ -20,9 +21,9 @@ export default function PatientDashboard() {
             <div className="flex items-center gap-3 hover:text-white cursor-pointer">
                 <Stethoscope /> <span>Doctores</span>
             </div>
-            <div className="flex items-center gap-3 hover:text-white cursor-pointer">
+            <Link to="/login" className="flex items-center gap-3 text-white hover:text-teal-400">
                 <LogOut /> <span>Salir</span>
-            </div>
+            </Link>
             </nav>
         </aside>
 

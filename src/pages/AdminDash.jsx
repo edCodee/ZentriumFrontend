@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserPlus, Briefcase, Building2, LayoutDashboard, Settings } from 'lucide-react';
+import { UserPlus, Briefcase, Building2, LayoutDashboard, Settings, Search, LogOut, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function AdminDashboard() {
@@ -24,6 +24,9 @@ export default function AdminDashboard() {
           <div className="flex items-center gap-3 hover:text-white cursor-pointer">
             <Settings /> <span>Configuración</span>
           </div>
+          <Link to="/login" className="flex items-center gap-3 text-white hover:text-teal-400">
+                <LogOut /> <span>Salir</span>
+            </Link>
         </nav>
       </aside>
 
@@ -32,13 +35,13 @@ export default function AdminDashboard() {
         <h1 className="text-3xl font-bold text-teal-300 mb-8">Panel Administrativo</h1>
 
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <Link to="/registeradmin">
+        <Link to="/createuser">
   <div className="bg-gray-800 text-white rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all p-6 cursor-pointer">
     <div className="flex items-center gap-4">
       <UserPlus className="text-teal-400" size={32} />
       <div>
-        <h2 className="text-lg font-semibold">Nuevo Doctor</h2>
-        <p className="text-sm text-gray-400">Agregar un nuevo profesional de salud</p>
+        <h2 className="text-lg font-semibold">Nuevo Empleado</h2>
+        <p className="text-sm text-gray-400">Agregar un nuevo profesional en su área</p>
       </div>
     </div>
   </div>
@@ -47,24 +50,39 @@ export default function AdminDashboard() {
 <Link to="/doctorsearch">
   <div className="bg-gray-800 text-white rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all p-6 cursor-pointer">
     <div className="flex items-center gap-4">
-      <UserPlus className="text-teal-400" size={32} />
+      <Search className="text-teal-400" size={32} />
       <div>
-        <h2 className="text-lg font-semibold">Buscar Empleado</h2>
-        <p className="text-sm text-gray-400">Busca empleado parte de la empresa</p>
+        <h2 className="text-lg font-semibold">Buscar Usuario</h2>
+        <p className="text-sm text-gray-400">Busca usuario parte de la empresa</p>
       </div>
     </div>
   </div>
 </Link>
 
+<Link to="/assignedrole">
           <div className="bg-gray-800 text-white rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all p-6">
             <div className="flex items-center gap-4">
               <Briefcase className="text-teal-400" size={32} />
               <div>
-                <h2 className="text-lg font-semibold">Nuevo Empleado</h2>
-                <p className="text-sm text-gray-400">Registrar un nuevo miembro del staff</p>
+                <h2 className="text-lg font-semibold">Asignar Rol</h2>
+                <p className="text-sm text-gray-400">Asignar un rol a un nuevo empleado</p>
               </div>
             </div>
           </div>
+          </Link>
+
+          <Link to="/users">
+          <div className="bg-gray-800 text-white rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all p-6">
+            <div className="flex items-center gap-4">
+              <User className="text-teal-400" size={32} />
+              <div>
+                <h2 className="text-lg font-semibold">Usuarios</h2>
+                <p className="text-sm text-gray-400">Gestion de ususarios rapida</p>
+              </div>
+            </div>
+          </div>
+          </Link>
+
 
           <div className="bg-gray-800 text-white rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all p-6">
             <div className="flex items-center gap-4">

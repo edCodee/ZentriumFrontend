@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from '../pages/Home'
-import Login from '../pages/Login'  // puedes descomentar cuando tengas la página
+import Login from '../pages/Login'  // No olvidar Proteger paginas y hacer el spring de migrar datos del trabajo OjO
 import Dashboard from '../pages/Dashboard'
 import Register from '../pages/Register'
 import Team from '../pages/Team'
@@ -13,6 +13,10 @@ import PacienteDash from '../pages/PacienteDash'
 import LoginDoctor from '../pages/LoginDoctor'
 import DoctorDash from '../pages/DoctorDash'
 import RegisterAdmin from '../pages/RegisterAdmin'
+import SelectionRole from '../pages/SelectionRole'
+import CreateUser from '../pages/CreateUser'
+import AssignedRole from '../pages/AssignedRole'
+import Users from '../pages/Users'
 
 export default function AppRouter() {
     return (
@@ -32,6 +36,11 @@ export default function AppRouter() {
             <Route path='/logindoctor' element={<LoginDoctor/>}/>
             <Route path='/doctordash' element={<DoctorDash/>}/>
             <Route path='/registeradmin' element={<RegisterAdmin/>}/>
+            <Route path='/selectionrole' element={<SelectionRole/>}/>
+            <Route path='/createuser' element={<CreateUser/>}/>
+            <Route path='/assignedrole' element={<AssignedRole/>}/>
+            <Route path='/users' element={<Users/>}/>
+
         </Routes>
         </BrowserRouter>
     )

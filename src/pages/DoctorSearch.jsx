@@ -6,24 +6,18 @@ export default function PatientSearch() {
     const [error, setError] = useState('');
 
     const handleSearch = async () => {
-        if (!cedula) return;
+        if (!cedula.trim()) return;
 
         try {
-            // const res = await fetch('http://localhost:5010/api/User');
-            // const res = await fetch(`${import.meta.env.VITE_API_URL}/api/User`);
-            const res = await fetch(`http://${window.location.hostname}:5010/api/User`);
-
+            const res = await fetch(`http://${window.location.hostname}:5010/api/User/ByCedula/${cedula.trim()}`);
 
             if (res.ok) {
                 const data = await res.json();
-                const found = data.find((u) => u.users_id.toString() === cedula.trim());
-                if (found) {
-                    setPatient(found);
-                    setError('');
-                } else {
-                    setPatient(null);
-                    setError('Paciente no encontrado.');
-                }
+                setPatient(data);
+                setError('');
+            } else if (res.status === 404) {
+                setPatient(null);
+                setError('Paciente no encontrado.');
             } else {
                 setPatient(null);
                 setError('Error al obtener los datos.');
@@ -34,16 +28,17 @@ export default function PatientSearch() {
             setPatient(null);
         }
     };
+
     return (
         <div className="min-h-screen bg-[#1a202c] text-white px-6 py-12">
             <div className="max-w-4xl mx-auto">
                 <h1 className="text-4xl font-bold text-center text-teal-400 mb-10">
-                    🔍 Buscar Paciente
+                    Buscar Paciente
                 </h1>
                 <div className="flex flex-col sm:flex-row items-center gap-4 justify-center mb-8">
                     <input
                         type="text"
-                        placeholder="Número de Serial"
+                        placeholder="Cédula"
                         value={cedula}
                         onChange={(e) => setCedula(e.target.value)}
                         className="w-full sm:w-1/2 px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-teal-400 focus:border-teal-400"
@@ -73,12 +68,12 @@ export default function PatientSearch() {
                             </thead>
                             <tbody className="text-gray-200">
                                 <tr className="border-t border-gray-600 hover:bg-gray-700">
-                                    <td className="px-4 py-3">{patient.users_serial}</td>
+                                    <td className="px-4 py-3">{patient.userSerial}</td>
                                     <td className="px-4 py-3">
-                                        {patient.users_firstName} {patient.users_middleName ?? ''} {patient.users_lastName} {patient.users_secondLastName ?? ''}
+                                        {patient.userFirstName} {patient.userMiddleName ?? ''} {patient.userLastName} {patient.userSecondLastName ?? ''}
                                     </td>
-                                    <td className="px-4 py-3">{patient.users_email}</td>
-                                    <td className="px-4 py-3">{new Date(patient.users_dateOfBirth).toLocaleDateString()}</td>
+                                    <td className="px-4 py-3">{patient.userEmail}</td>
+                                    <td className="px-4 py-3">{new Date(patient.userBirthDate).toLocaleDateString()}</td>
                                 </tr>
                             </tbody>
                         </table>

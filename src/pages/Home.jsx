@@ -92,7 +92,7 @@ export default function Example() {
 >
     {({ open }) => (
         <>
-        {/* 🎨 FONDO VISUAL DENTRO DEL FLUJO */}
+        {/* FONDO VISUAL  */}
         <div className="relative h-20 w-full overflow-hidden bg-[#0D1A2B]">
             <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
             {/* Tus elementos visuales con colores y formas */}
@@ -105,7 +105,7 @@ export default function Example() {
                 <div className="absolute top-[40px] left-[830px] w-[300px] h-[300px] bg-[#122740] rotate-160 "></div>
             </div>
 
-            {/* 🧱 CONTENIDO NAVBAR ENCIMA DEL FONDO */}
+            {/* CONTENIDO NAVBAR ENCIMA  */}
             <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             {/* LOGO */}
             <div className="flex items-center">
@@ -145,7 +145,7 @@ export default function Example() {
             </div>
         </div>
 
-        {/* 📱 MENÚ MÓVIL */}
+        {/* MENÚ MÓVIL */}
         <Disclosure.Panel className="md:hidden bg-[#14304E] border-t border-gray-600 relative z-10">
             <div className="space-y-1 px-4 pb-3 pt-2">
             {navigation.map((item) => (
@@ -262,18 +262,12 @@ export default function Example() {
             </div>
 
 
-
-
-
-
-
-
-    {/* Otras secciones como portada, información, etc. */}
+    {/* Acuerdate Joel */}
 
     <section id="equipo" className="bg-white py-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">Nuestro Equipo</h2>
-        {/* AQUÍ VA LA LISTA DE USUARIOS */}
+        {/* LISTA DE USUARIOS */}
         <ul role="list" className="divide-y divide-gray-100">
         <li class="flex justify-between gap-x-6 py-5">
         <div class="flex min-w-0 gap-x-4">

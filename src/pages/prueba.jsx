@@ -5,7 +5,7 @@ export default function InsertUserForm() {
     const [photo, setPhoto] = useState(null);
     const [photoBase64, setPhotoBase64] = useState(null);
     const [status, setStatus] = useState("");
-    const [showSuccessModal, setShowSuccessModal] = useState(false); // 👉 modal
+    const [showSuccessModal, setShowSuccessModal] = useState(false); // 
 
     const handlePhotoChange = (e) => {
         const file = e.target.files[0];
@@ -68,7 +68,7 @@ export default function InsertUserForm() {
                 setPhoto(null);
                 setPhotoBase64(null);
                 setStatus("Usuario registrado con éxito.");
-                setShowSuccessModal(true); // 👉 Mostrar modal
+                setShowSuccessModal(true); // 
             } else {
                 setStatus("Error al registrar. Intenta de nuevo.");
             }
@@ -80,7 +80,7 @@ export default function InsertUserForm() {
 
     const handleCloseModal = () => {
         setShowSuccessModal(false);
-        window.location.href = '/'; // 👉 Cambia esto si tu ruta principal es otra
+        window.location.href = '/'; // 
     };
 
     return (
@@ -104,7 +104,7 @@ export default function InsertUserForm() {
             {showSuccessModal && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                     <div className="bg-white rounded-xl p-8 shadow-lg w-full max-w-sm text-center">
-                        <h2 className="text-2xl font-bold text-green-700 mb-4">✅ Usuario creado con éxito</h2>
+                        <h2 className="text-2xl font-bold text-green-700 mb-4">Usuario creado con éxito</h2>
                         <p className="text-gray-600 mb-6">Gracias por registrarte. Haz clic en OK para continuar.</p>
                         <button
                             onClick={handleCloseModal}

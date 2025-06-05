@@ -36,7 +36,7 @@ export default function Example() {
         <>
     <div className="flex items-start justify-center min-h-0 bg-[#14304E] pt-0">
         <div className="flex items-center space-x-4">
-            {/* Contenedor cuadrado para el logo */}
+            
             <div className="flex items-center justify-center h-40 w-40 bg-[#14304E]">
             <img
                 alt="Hospital Logo"
@@ -44,18 +44,18 @@ export default function Example() {
                 className="h-30 w-40"
             />
             </div>
-            {/* Texto 'Hospital' al lado del logo */}
+            
             <h1 className="text-6xl font-bold tracking-tight text-white">
             Zentrum Medical
             </h1>
         </div>
     </div>
                 <div className="flex min-h-full flex-1 flex-row items-start justify-center px-6 py-20 lg:px-30 translate-x-[40px]">
-            {/* Contenedor para la imagen (a la izquierda) */}
+            
             <div className="flex items-center justify-center lg:mr-10">
                 <Slideshow/>
             </div>
-            {/* Contenedor del formulario (a la derecha) */}
+            
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                 <form action="#" method="POST" className="space-y-6">
                 <div>
@@ -117,7 +117,6 @@ export default function Example() {
                             Registrar 
                         </Link>
 </div>
-
                 </form>
             </div>
             </div>
