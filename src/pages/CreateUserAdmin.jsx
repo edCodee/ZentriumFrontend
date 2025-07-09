@@ -31,7 +31,7 @@ export default function CrearUsuario() {
         data.userBirthDate = new Date(data.userBirthDate).toISOString();
 
         try {
-            const response = await fetch(`https://localhost:7087/api/User`, {
+            const response = await fetch(`https://hospitalapi20250709061843-bxcva0e6e2euacbv.canadacentral-01.azurewebsites.net/api/User`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
