@@ -5,7 +5,7 @@ export default function Appointments() {
     const token = localStorage.getItem('token');
 
     useEffect(() => {
-        fetch('https://localhost:7087/apiDoctorProfile/my-appointments', {
+        fetch('https://hospitalapi20250709061843-bxcva0e6e2euacbv.canadacentral-01.azurewebsites.net/apiDoctorProfile/my-appointments', {
         headers: {
             'Authorization': `Bearer ${token}`,
             'accept': '*/*',

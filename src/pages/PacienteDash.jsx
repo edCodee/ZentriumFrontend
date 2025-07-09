@@ -28,7 +28,7 @@ const handleSubmit = async (e) => {
     const contactFormatted = `${form.contactName} (${form.contactRelation}) - +593 ${form.contactPhone.replace(/^0/, '')}`;
 
     try {
-        const res = await fetch('https://localhost:7087/apiPatientProfile', {
+        const res = await fetch('https://hospitalapi20250709061843-bxcva0e6e2euacbv.canadacentral-01.azurewebsites.net/apiPatientProfile', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ const handleSubmit = async (e) => {
 
 
     useEffect(() => {
-        fetch('https://localhost:7087/apiPatientProfile/exists', {
+        fetch('https://hospitalapi20250709061843-bxcva0e6e2euacbv.canadacentral-01.azurewebsites.net/apiPatientProfile/exists', {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`,

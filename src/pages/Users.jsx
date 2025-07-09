@@ -7,8 +7,7 @@ export default function Usuarios() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch(`https://localhost:7087/api/User
-`, {
+        fetch(`https://hospitalapi20250709061843-bxcva0e6e2euacbv.canadacentral-01.azurewebsites.net/api/User`, {
             headers: {
                 Accept: "text/plain",
             },

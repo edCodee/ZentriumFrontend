@@ -27,7 +27,7 @@ export default function CreateDoctorProfile() {
         }
 
         try {
-            const response = await fetch(`https://localhost:7087/apiDoctorProfile/${userSerial}`, {
+            const response = await fetch(`https://hospitalapi20250709061843-bxcva0e6e2euacbv.canadacentral-01.azurewebsites.net/apiDoctorProfile/${userSerial}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

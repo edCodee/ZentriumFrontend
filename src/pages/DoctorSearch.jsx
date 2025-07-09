@@ -9,7 +9,7 @@ export default function PatientSearch() {
         if (!cedula.trim()) return;
 
         try {
-            const res = await fetch(`https://localhost:7087/api/User/ByCedula/1805244199`);
+            const res = await fetch(`https://hospitalapi20250709061843-bxcva0e6e2euacbv.canadacentral-01.azurewebsites.net/api/User/ByCedula/${cedula}`);
 
             if (res.ok) {
                 const data = await res.json();

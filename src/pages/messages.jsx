@@ -26,7 +26,7 @@ const MessagesPage = () => {
 
     const fetchMessages = async () => {
         try {
-            const response = await fetch("https://localhost:7087/api/Messages", {
+            const response = await fetch("https://hospitalapi20250709061843-bxcva0e6e2euacbv.canadacentral-01.azurewebsites.net/api/Messages", {
                 headers: {
                     Accept: "application/json"
                 }

@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
         useEffect(() => {
             const fetchDoctors = async () => {
             try {
-                const response = await fetch("https://localhost:7087/apiDoctorProfile/profiledoctor", {
+                const response = await fetch("https://hospitalapi20250709061843-bxcva0e6e2euacbv.canadacentral-01.azurewebsites.net/apiDoctorProfile/profiledoctor", {
                 headers: { accept: "application/json" },
                 });
                 if (response.ok) {

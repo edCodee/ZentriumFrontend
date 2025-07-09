@@ -15,7 +15,7 @@ export default function ScheduleAppointment() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('https://localhost:7087/apiDoctorProfile', {
+        fetch('https://hospitalapi20250709061843-bxcva0e6e2euacbv.canadacentral-01.azurewebsites.net/apiDoctorProfile', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -38,7 +38,7 @@ export default function ScheduleAppointment() {
         setLoading(true);
 
         try {
-            const res = await fetch('https://localhost:7087/apiAppointment', {
+            const res = await fetch('https://hospitalapi20250709061843-bxcva0e6e2euacbv.canadacentral-01.azurewebsites.net/apiAppointment', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
