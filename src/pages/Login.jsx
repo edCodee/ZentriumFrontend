@@ -41,9 +41,9 @@ export default function LoginPage() {
     const handleLogin = async (e) => {
         e.preventDefault();
         setError(null);
-
+// https://localhost:7087/api/User/login
         try {
-            const response = await fetch(`https://localhost:7087/api/User/login`, {
+            const response = await fetch(`https://hospitalapi20250709061843-bxcva0e6e2euacbv.canadacentral-01.azurewebsites.net/api/User/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
