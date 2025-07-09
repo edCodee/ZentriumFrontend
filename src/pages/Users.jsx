@@ -7,7 +7,8 @@ export default function Usuarios() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch(`http://${window.location.hostname}:5010/Api/User`, {
+        fetch(`https://localhost:7087/api/User
+`, {
             headers: {
                 Accept: "text/plain",
             },
@@ -66,7 +67,7 @@ export default function Usuarios() {
                                 <tr key={u.userSerial} className="border-t border-gray-600 hover:bg-gray-700">
                                     <td className="p-3 text-white">{`${u.userFirstName} ${u.userMiddleName} ${u.userLastName} ${u.userSecondLastName}`}</td>
                                     <td className="p-3 text-white">{u.userId}</td>
-                                    <td className="p-3 text-white">{u.userUsername}</td>
+                                    <td className="p-3 text-white">{u.userUserName}</td>
                                     <td className="p-3 text-white">{u.userEmail}</td>
                                     <td className="p-3 text-white">
                                         {new Date(u.userBirthDate).toLocaleDateString("es-EC")}

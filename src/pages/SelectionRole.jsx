@@ -16,7 +16,7 @@ const SelectRole = () => {
     const handleSelect = (roleName) => {
         const name = roleName.toLowerCase();
         if (name === "administrador") {
-            navigate("/admindash");
+            navigate("/dashadministrator");
         } else if (name === "paciente") {
             navigate("/pacientedash");
         } else if (name === "doctor") {

@@ -9,7 +9,7 @@ export default function PatientSearch() {
         if (!cedula.trim()) return;
 
         try {
-            const res = await fetch(`http://${window.location.hostname}:5010/api/User/ByCedula/${cedula.trim()}`);
+            const res = await fetch(`https://localhost:7087/api/User/ByCedula/1805244199`);
 
             if (res.ok) {
                 const data = await res.json();

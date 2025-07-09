@@ -1,8 +1,11 @@
 import React from 'react';
-import { UserPlus, Briefcase, Building2, LayoutDashboard, Settings, Search, LogOut, User } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { UserPlus, Briefcase, Building2, LayoutDashboard, Settings, Search, LogOut, User, BriefcaseMedicalIcon, BotIcon } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { confirmLogout } from "../utils/confirmLogout";
+
 
 export default function AdminDashboard() {
+      const navigate = useNavigate();
   return (
     <div className="flex min-h-screen bg-[#1a202c] text-white">
       {/* Sidebar */}
@@ -12,19 +15,24 @@ export default function AdminDashboard() {
           <div className="flex items-center gap-3 text-teal-300 hover:text-white cursor-pointer">
             <LayoutDashboard /> <span>Dashboard</span>
           </div>
-          <div className="flex items-center gap-3 hover:text-white cursor-pointer">
+          {/* <div className="flex items-center gap-3 hover:text-white cursor-pointer">
             <UserPlus /> <span>Doctores</span>
-          </div>
-          <div className="flex items-center gap-3 hover:text-white cursor-pointer">
-            <Briefcase /> <span>Empleados</span>
-          </div>
-          <div className="flex items-center gap-3 hover:text-white cursor-pointer">
-            <Building2 /> <span>Departamentos</span>
-          </div>
-          <div className="flex items-center gap-3 hover:text-white cursor-pointer">
+          </div> */}
+          {/* <div className="flex items-center gap-3 hover:text-white cursor-pointer">
             <Settings /> <span>Configuración</span>
-          </div>
-          <Link to="/login" className="flex items-center gap-3 text-white hover:text-teal-400">
+          </div> */}
+            <Link
+                to="/login"
+                onClick={async (e) => {
+                e.preventDefault();
+                const confirmed = await confirmLogout();
+                if (confirmed) {
+                    localStorage.removeItem("token");
+                    navigate("/login", { replace: true });
+                }
+                }}
+                className="flex items-center gap-3 p-2 rounded-xl hover:text-teal-400 transition-all"
+            >
                 <LogOut /> <span>Salir</span>
             </Link>
         </nav>
@@ -35,17 +43,17 @@ export default function AdminDashboard() {
         <h1 className="text-3xl font-bold text-teal-300 mb-8">Panel Administrativo</h1>
 
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <Link to="/createuser">
-  <div className="bg-gray-800 text-white rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all p-6 cursor-pointer">
-    <div className="flex items-center gap-4">
-      <UserPlus className="text-teal-400" size={32} />
-      <div>
-        <h2 className="text-lg font-semibold">Nuevo Empleado</h2>
-        <p className="text-sm text-gray-400">Agregar un nuevo profesional en su área</p>
-      </div>
-    </div>
-  </div>
-</Link>
+        <Link to="/createuseradmin">
+          <div className="bg-gray-800 text-white rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all p-6 cursor-pointer">
+            <div className="flex items-center gap-4">
+              <UserPlus className="text-teal-400" size={32} />
+              <div>
+                <h2 className="text-lg font-semibold">Nuevo Empleado</h2>
+                <p className="text-sm text-gray-400">Agregar un nuevo profesional en su área</p>
+              </div>
+            </div>
+          </div>
+        </Link>
 
 <Link to="/doctorsearch">
   <div className="bg-gray-800 text-white rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all p-6 cursor-pointer">
@@ -83,16 +91,30 @@ export default function AdminDashboard() {
           </div>
           </Link>
 
-
+          <Link to="/listdoctor">
           <div className="bg-gray-800 text-white rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all p-6">
             <div className="flex items-center gap-4">
-              <Building2 className="text-teal-400" size={32} />
+              <BriefcaseMedicalIcon className="text-teal-400" size={32} />
               <div>
-                <h2 className="text-lg font-semibold">Nuevo Departamento</h2>
-                <p className="text-sm text-gray-400">Crear una nueva unidad administrativa</p>
+                <h2 className="text-lg font-semibold">Doctores</h2>
+                <p className="text-sm text-gray-400">Lista de doctores Activos</p>
               </div>
             </div>
           </div>
+          </Link>
+
+          <Link to="/messages">
+          <div className="bg-gray-800 text-white rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all p-6">
+            <div className="flex items-center gap-4">
+              <BotIcon className="text-teal-400" size={32} />
+              <div>
+                <h2 className="text-lg font-semibold">Boot de ventas </h2>
+                <p className="text-sm text-gray-400">Lista de doctores Activos</p>
+              </div>
+            </div>
+          </div>
+          </Link>
+
         </section>
       </main>
     </div>

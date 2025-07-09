@@ -23,8 +23,8 @@ export default function DoctorDashboard() {
             <Stethoscope /> <span>Consultas</span>
           </div>
           <Link to="/login" className="flex items-center gap-3 hover:text-white cursor-pointer">
-  <LogOut /> <span>Salir</span>
-</Link>
+            <LogOut /> <span>Salir</span>
+          </Link>
 
         </nav>
       </aside>
@@ -74,15 +74,18 @@ export default function DoctorDashboard() {
             </div>
           </div>
 
-          <div className="bg-red-800 rounded-xl p-6 shadow-lg hover:shadow-red-500/20 transition-all">
+          <Link to="/appointmentdoctor" className="block">
+          <div className="bg-rose-400 rounded-xl p-6 shadow-lg hover:shadow-red-500/20 transition-all">
             <div className="flex items-center gap-4">
               <Cross className="text-red-300" size={32} />
               <div>
-                <h2 className="text-lg font-semibold">Defunción</h2>
-                <p className="text-sm text-red-100">Registro de defunción médica</p>
+                <h2 className="text-lg font-semibold">Citas Programadas</h2>
+                <p className="text-sm text-red-100">Revisa las citas programadas el dia de hoy.</p>
               </div>
             </div>
           </div>
+          </Link>
+
         </section>
       </main>
     </div>

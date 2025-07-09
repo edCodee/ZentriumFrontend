@@ -13,6 +13,7 @@ const Slideshow = () => {
         "/ruta-imagen3.png",
         "/ruta-imagen1.png",
         ];
+        
     
         const [currentIndex, setCurrentIndex] = useState(0);
     
